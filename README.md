@@ -1,6 +1,4 @@
 # PeerDataServer
-[![Build Status](https://travis-ci.org/Vardius/peer-data-server.svg?branch=master)](https://travis-ci.org/Vardius/peer-data)
-
 PeerDataServer is messaging service on *Node* using [socket.io](http://socket.io/). This is **ready to use** example signaling server for [PeerData](https://github.com/Vardius/peer-data) library.
 
 The sender and receiver *RTCPeerConnections* run in web pages on different devices, and we need a way for them to communicate metadata.
