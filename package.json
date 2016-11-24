@@ -1,0 +1,42 @@
+{
+  "name": "peer-data-server",
+  "version": "1.0.0",
+  "description": "PeerDataServer - socket.io signaling server for PeerData library",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "PeerDataServer",
+    "PeerData",
+    "WebRTC",
+    "signaling",
+    "signalling",
+    "cdn",
+    "web",
+    "rtc",
+    "video",
+    "player",
+    "html5",
+    "peer",
+    "socket",
+    "real",
+    "time",
+    "communication",
+    "socket",
+    "socket.io",
+    "server"
+  ],
+  "author": {
+    "name": "Rafał Lorenz",
+    "email": "vardius@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vardius/peer-data-server/issues"
+  },
+  "homepage": "https://github.com/vardius/peer-data-server#readme",
+  "dependencies": {
+    "socket.io": "1.2.0",
+    "node-uuid": "1.4.x"
+  }
+}
