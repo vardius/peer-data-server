@@ -36,7 +36,6 @@
   },
   "homepage": "https://github.com/vardius/peer-data-server#readme",
   "dependencies": {
-    "socket.io": "1.2.0",
-    "node-uuid": "1.4.x"
+    "socket.io": "1.2.0"
   }
 }

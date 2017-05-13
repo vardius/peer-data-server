@@ -1,7 +1,6 @@
 'use strict';
 
 var io = require('socket.io')(8080),
-    uuid = require('node-uuid'),
     os = require('os');
 
 const SocketEventType = {
@@ -13,7 +12,7 @@ const SocketEventType = {
 };
 
 io.sockets.on('connection', function (socket) {
-    var id = uuid.v4();
+    var id = socket.id;
 
     function log() {
         socket.emit('log', ...arguments);
@@ -35,7 +34,7 @@ io.sockets.on('connection', function (socket) {
         log(event);
 
         if (event.callee) {
-            io.sockets.in(event.callee).emit('message', event);
+            socket.broadcast.to(event.callee.id).emit('message', event);
         } else {
             switch (event.type) {
                 case SocketEventType.CONNECT:
