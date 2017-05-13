@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "PeerDataServer - socket.io signaling server for PeerData library",
   "scripts": {
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "keywords": [
     "PeerDataServer",

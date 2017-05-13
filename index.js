@@ -28,9 +28,12 @@ io.sockets.on('connection', function (socket) {
     }
 
     socket.on('message', function (event) {
+        event.caller = {
+            id: id
+        };
+
         log('[Signaling Server]: ', event);
 
-        event.caller = {id: id};
         if (event.callee) {
             io.sockets.in(event.callee).emit('message', event);
         } else {
