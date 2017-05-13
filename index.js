@@ -32,7 +32,7 @@ io.sockets.on('connection', function (socket) {
             id: id
         };
 
-        log('[Signaling Server]: ', event);
+        log(event);
 
         if (event.callee) {
             io.sockets.in(event.callee).emit('message', event);
