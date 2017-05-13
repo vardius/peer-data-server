@@ -4,48 +4,43 @@ var io = require('socket.io')(8080),
     os = require('os');
 
 const SocketEventType = {
-    CANDIDATE: 'candidate',
-    CONNECT: 'connect',
-    DISCONNECT: 'disconnect',
-    OFFER: 'offer',
-    ANSWER: 'answer'
+    CANDIDATE,
+    CONNECT,
+    DISCONNECT,
+    OFFER,
+    ANSWER
 };
 
 io.sockets.on('connection', function (socket) {
-    var id = socket.id;
-
     function log() {
         socket.emit('log', ...arguments);
     }
 
-    function onConnect() {
+    function onConnect(id) {
         socket.join(id);
     }
 
-    function onDisconnect() {
+    function onDisconnect(id) {
         socket.leave(id);
     }
 
     socket.on('message', function (event) {
         event.caller = {
-            id: id
+            id: socket.id
         };
 
         log(event);
 
-        if (event.callee) {
-            socket.broadcast.to(event.callee.id).emit('message', event);
-        } else {
-            switch (event.type) {
-                case SocketEventType.CONNECT:
-                    onConnect(event);
-                    break;
-                case SocketEventType.DISCONNECT:
-                    onDisconnect(event);
-                    break;
-            }
-            socket.broadcast.emit('message', event);
+        switch (event.type) {
+            case SocketEventType.CONNECT:
+                onConnect(event.room.id);
+                break;
+            case SocketEventType.DISCONNECT:
+                onDisconnect(event.room.id);
+                break;
         }
+
+        socket.broadcast.to(event.room.id).emit('message', event);
     });
 
     socket.on('ipaddr', function () {
