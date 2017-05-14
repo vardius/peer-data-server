@@ -4,11 +4,11 @@ var io = require('socket.io')(8080),
     os = require('os');
 
 const SocketEventType = {
-    CANDIDATE,
-    CONNECT,
-    DISCONNECT,
-    OFFER,
-    ANSWER
+    CONNECT: 'CONNECT',
+    DISCONNECT: 'DISCONNECT',
+    CANDIDATE: 'CANDIDATE',
+    OFFER: 'OFFER',
+    ANSWER: 'ANSWER',
 };
 
 io.sockets.on('connection', function (socket) {
@@ -29,7 +29,7 @@ io.sockets.on('connection', function (socket) {
             id: socket.id
         };
 
-        log(event);
+        log('SERVER_LOG', event);
 
         switch (event.type) {
             case SocketEventType.CONNECT:
