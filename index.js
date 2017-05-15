@@ -20,12 +20,12 @@ io.on('connection', function (socket) {
     }
 
     function onConnect(id) {
-        console.log('Client connected to room: ': id);
+        console.log('Client connected to room: ' + id);
         socket.join(id);
     }
 
     function onDisconnect(id) {
-        console.log('Client disconnected from room: ': id);
+        console.log('Client disconnected from room: ' + id);
         socket.leave(id);
     }
 
