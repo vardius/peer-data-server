@@ -1,6 +1,6 @@
 'use strict';
 
-var io = require('socket.io')(PORT),
+var express = require('express'),
     os = require('os');
 
 const SocketEventType = {
@@ -11,7 +11,13 @@ const SocketEventType = {
     ANSWER: 'ANSWER',
 };
 
-io.sockets.on('connection', function (socket) {
+const server = express()
+    .use((req, res) => res.sendFile(INDEX))
+    .listen(PORT, () => console.log(`Listening on ${ PORT }`));
+
+const io = require('socket.io')(server);
+
+io.on('connection', function (socket) {
     function log() {
         socket.emit('log', ...arguments);
     }
