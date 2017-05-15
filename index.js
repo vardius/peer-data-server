@@ -8,6 +8,14 @@ const PORT = process.env.PORT || 3000;
 
 const io = socketIO(PORT);
 
+const SocketEventType = {
+    CONNECT: 'CONNECT',
+    DISCONNECT: 'DISCONNECT',
+    CANDIDATE: 'CANDIDATE',
+    OFFER: 'OFFER',
+    ANSWER: 'ANSWER',
+};
+
 io.on('connection', function (socket) {
     function log() {
         socket.emit('log', ...arguments);
