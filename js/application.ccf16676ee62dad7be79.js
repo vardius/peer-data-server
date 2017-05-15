@@ -4720,7 +4720,7 @@ var Message = exports.Message = (_dec = (0, _webComponent.WebComponent)('webrtc-
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (Message.__proto__ || (0, _getPrototypeOf2.default)(Message)).call(this));
 
-    _this._picture = '/webrtc-chat/images/avatar.png';
+    _this._picture = '/images/avatar.png';
     _this._type = 'system';
     _this._status = 'off';
     _this._time = new Date().getTime();
@@ -4968,7 +4968,7 @@ var Peer = exports.Peer = (_dec = (0, _webComponent.WebComponent)('webrtc-peer',
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (Peer.__proto__ || (0, _getPrototypeOf2.default)(Peer)).call(this));
 
-    _this._picture = '/webrtc-chat/images/avatar.png';
+    _this._picture = '/images/avatar.png';
     _this._status = 'off';
     _this._title = '';
     _this._info = '';
@@ -11137,4 +11137,4 @@ module.exports = __webpack_require__(191);
 
 /***/ })
 ],[494]);
-//# sourceMappingURL=application.9cd11b9f01dd1c1900c9.js.map
+//# sourceMappingURL=application.ccf16676ee62dad7be79.js.map
