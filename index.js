@@ -39,15 +39,21 @@ io.on('connection', function (socket) {
         log('SERVER_LOG', event);
 
         switch (event.type) {
-            case SocketEventType.CONNECT:
-                onConnect(event.room.id);
-                break;
-            case SocketEventType.DISCONNECT:
-                onDisconnect(event.room.id);
-                break;
+          case SocketEventType.CONNECT:
+            onConnect(event.room.id);
+            socket.broadcast.to(event.room.id).emit('message', event);
+            break;
+          case SocketEventType.DISCONNECT:
+            onDisconnect(event.room.id);
+            socket.broadcast.to(event.room.id).emit('message', event);
+            break;
+          case SocketEventType.OFFER:
+          case SocketEventType.ANSWER:
+            socket.broadcast.to(event.callee.id).emit('message', event);
+            break;
+          default:
+            socket.broadcast.to(event.room.id).emit('message', event);
         }
-
-        socket.broadcast.to(event.room.id).emit('message', event);
     });
 
     socket.on('ipaddr', function () {
