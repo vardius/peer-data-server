@@ -1,24 +1,12 @@
 'use strict';
 
-const express = require('express');
 const socketIO = require('socket.io');
 const path = require('path');
 const os = require('os');
 
 const PORT = process.env.PORT || 3000;
-const INDEX = path.join(__dirname, 'index.html');
 
-const server = express()
-    .get("/", function (req, res) {
-        res.sendfile('index.html')
-    })
-    .get(/^(.+)$/, function (req, res) {
-        console.log('static file request : ' + req.params);
-        res.sendfile(__dirname + req.params[0]);
-    })
-    .listen(PORT, () => console.log(`Listening on ${ PORT }`));
-
-const io = socketIO(server);
+const io = socketIO(PORT);
 
 io.on('connection', function (socket) {
     function log() {
