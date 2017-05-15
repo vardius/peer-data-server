@@ -1,0 +1,6 @@
+{
+  "name": "PeerDataServer",
+  "description": "signaling server for PeerData library",
+  "repository": "https://github.com/vardius/peer-data-server",
+  "keywords": ["node", "websocket", "socket.io", "webrtc", "server", "peer"]
+}

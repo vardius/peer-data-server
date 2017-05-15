@@ -1,21 +1,18 @@
 'use strict';
 
-var express = require('express'),
-    os = require('os');
+const express = require('express');
+const socketIO = require('socket.io');
+const path = require('path');
+const os = require('os');
 
-const SocketEventType = {
-    CONNECT: 'CONNECT',
-    DISCONNECT: 'DISCONNECT',
-    CANDIDATE: 'CANDIDATE',
-    OFFER: 'OFFER',
-    ANSWER: 'ANSWER',
-};
+const PORT = process.env.PORT || 3000;
+const INDEX = path.join(__dirname, 'index.html');
 
 const server = express()
     .use((req, res) => res.sendFile(INDEX))
     .listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
-const io = require('socket.io')(server);
+const io = socketIO(server);
 
 io.on('connection', function (socket) {
     function log() {
@@ -23,10 +20,12 @@ io.on('connection', function (socket) {
     }
 
     function onConnect(id) {
+        console.log('Client connected to room: ': id);
         socket.join(id);
     }
 
     function onDisconnect(id) {
+        console.log('Client disconnected from room: ': id);
         socket.leave(id);
     }
 
@@ -60,3 +59,5 @@ io.on('connection', function (socket) {
         }
     });
 });
+
+setInterval(() => io.emit('time', new Date().toTimeString()), 1000);

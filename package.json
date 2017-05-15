@@ -2,6 +2,7 @@
   "name": "peer-data-server",
   "version": "1.0.0",
   "description": "PeerDataServer - socket.io signaling server for PeerData library",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
