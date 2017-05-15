@@ -1,6 +1,6 @@
 'use strict';
 
-var io = require('socket.io')(8080),
+var io = require('socket.io')(PORT),
     os = require('os');
 
 const SocketEventType = {
