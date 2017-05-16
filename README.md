@@ -9,3 +9,5 @@ In order to set up and maintain a *WebRTC* call, *WebRTC* clients (peers) need t
 - Offer and answer messages providing information about media.
 
 In other words, an exchange of metadata is required before peer-to-peer streaming of audio, video, or data can take place. This process is called signaling.
+
+1. [Chat Example](https://github.com/vardius/webrtc-chat)
