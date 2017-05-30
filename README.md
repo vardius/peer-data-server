@@ -1,10 +1,7 @@
 # PeerDataServer
-PeerDataServer is messaging service on *Node* using [socket.io](http://socket.io/). This is **ready to use** example signaling server for [PeerData](https://github.com/Vardius/peer-data) library.
-
-## Support on Beerpay
-Hey dude! Help me out for a couple of :beers:!
-
 [![Beerpay](https://beerpay.io/vardius/peer-data-server/badge.svg?style=beer-square)](https://beerpay.io/vardius/peer-data-server)  [![Beerpay](https://beerpay.io/vardius/peer-data-server/make-wish.svg?style=flat-square)](https://beerpay.io/vardius/peer-data-server?focus=wish)
+
+PeerDataServer is messaging service on *Node* using [socket.io](http://socket.io/). This is **ready to use** example signaling server for [PeerData](https://github.com/Vardius/peer-data) library.
 
 The sender and receiver *RTCPeerConnections* run in web pages on different devices, and we need a way for them to communicate metadata.
 For this, we use a signaling server: a server that can pass messages between *WebRTC* clients (peers).
