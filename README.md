@@ -22,3 +22,8 @@ Want to contribute ? Feel free to send pull requests!
 
 Have problems, bugs, feature ideas?
 We are using the github [issue tracker](https://github.com/vardius/peer-data-server/issues) to manage them.
+
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/vardius/peer-data-server/badge.svg?style=beer-square)](https://beerpay.io/vardius/peer-data-server)  [![Beerpay](https://beerpay.io/vardius/peer-data-server/make-wish.svg?style=flat-square)](https://beerpay.io/vardius/peer-data-server?focus=wish)
