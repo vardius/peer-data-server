@@ -1,7 +1,7 @@
 {
-  "parser": "babel-eslint",
-  "extends": ["eslint:recommended"],
-
+  "extends": [
+    "eslint:recommended"
+  ],
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
@@ -11,9 +11,9 @@
     }
   },
   "env": {
-    "node": true,        // Node.js global variables and Node.js-specific rules.
-    "es6": true,         // es6
-    "mocha": true       // adds all of the Mocha testing global variables.
+    "node": true, // Node.js global variables and Node.js-specific rules.
+    "es6": true, // es6
+    "mocha": true // adds all of the Mocha testing global variables.
   },
   "globals": {
     "define": true

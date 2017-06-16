@@ -4,7 +4,8 @@
   "description": "PeerDataServer - socket.io signaling server for PeerData library",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "lint": "eslint config index.js"
   },
   "keywords": [
     "PeerDataServer",
@@ -36,7 +37,12 @@
     "url": "https://github.com/vardius/peer-data-server/issues"
   },
   "homepage": "https://github.com/vardius/peer-data-server#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "cookie-parser": "^1.4.3",
+    "eslint": "^4.0.0",
+    "express": "^4.15.3",
+    "peer-data": "^1.2.18",
     "socket.io": "1.2.0"
   }
 }
