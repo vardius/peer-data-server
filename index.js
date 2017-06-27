@@ -61,7 +61,6 @@ io.on("connection", function(socket) {
       case SignalingEventType.OFFER:
       case SignalingEventType.ANSWER:
       case SignalingEventType.CANDIDATE:
-      case SignalingEventType.ROOM:
         socket.broadcast.to(event.callee.id).emit("message", event);
         break;
       default:
