@@ -1,5 +1,7 @@
 # PeerDataServer
 [![Build Status](https://travis-ci.org/vardius/peer-data-server.svg?branch=master)](https://travis-ci.org/vardius/peer-data-server)
+[![npm version](https://img.shields.io/npm/v/peer-data-server.svg)](https://www.npmjs.com/package/peer-data-server)
+[![license](https://img.shields.io/github/license/vardius/peer-data-server.svg)](LICENSE)
 [![Beerpay](https://beerpay.io/vardius/peer-data-server/badge.svg?style=beer-square)](https://beerpay.io/vardius/peer-data-server)
 [![Beerpay](https://beerpay.io/vardius/peer-data-server/make-wish.svg?style=flat-square)](https://beerpay.io/vardius/peer-data-server?focus=wish)
 
@@ -14,6 +16,8 @@ In order to set up and maintain a *WebRTC* call, *WebRTC* clients (peers) need t
 
 In other words, an exchange of metadata is required before peer-to-peer streaming of audio, video, or data can take place. This process is called signaling.
 
+## [Documentation](https://github.com/vardius/peer-data-server/wiki)
+
 1. [Chat Example](https://github.com/vardius/webrtc-chat)
 
 ABOUT
@@ -26,3 +30,7 @@ Want to contribute ? Feel free to send pull requests!
 
 Have problems, bugs, feature ideas?
 We are using the github [issue tracker](https://github.com/vardius/peer-data-server/issues) to manage them.
+
+## License
+
+The code is available under the [MIT license](LICENSE).
