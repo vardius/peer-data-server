@@ -1,4 +1,5 @@
 import babel from "rollup-plugin-babel";
+import sourcemaps from "rollup-plugin-sourcemaps";
 import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import globals from "rollup-plugin-node-globals";
@@ -9,16 +10,17 @@ const pkg = require("./package");
 const external = Object.keys(pkg.dependencies);
 const plugins = [
   json({ preferConst: true, indent: "  " }),
+  sourcemaps(),
   resolve({ jsnext: true, preferBuiltins: true, main: true }),
   commonjs({
     include: "node_modules/**",
     namedExports: {
-      "node_modules/socket.io/lib/index.js": ["listen"]
+      "socket.io": ["listen"]
     }
   }),
   babel(),
-  builtins(),
-  globals()
+  globals(),
+  builtins()
 ];
 
 export default {
