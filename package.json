@@ -2,16 +2,10 @@
   "name": "peer-data-server",
   "version": "1.0.0",
   "description": "PeerDataServer - socket signaling server for PeerData library",
-  "main": "dist/peer-data-server.js",
-  "module": "lib/peer-data-server.js",
-  "jsnext:main": "lib/peer-data-server.js",
-  "jest": {
-    "testRegex": "(/test/.*\\.spec.js)$"
-  },
   "scripts": {
-    "clean": "rimraf lib dist coverage",
+    "clean": "rimraf lib coverage",
     "lint": "eslint src test",
-    "build": "rollup -c",
+    "build": "babel src -d lib",
     "test": "jest",
     "test:watch": "yarn test -- --watch",
     "test:cov": "yarn test -- --coverage",
@@ -20,6 +14,22 @@
     "posttest": "yarn run lint",
     "preversion": "yarn test",
     "postversion": "git push && git push --tags"
+  },
+  "main": "lib/index.js",
+  "author": {
+    "name": "Rafał Lorenz",
+    "email": "vardius@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vardius/peer-data-server/issues"
+  },
+  "homepage": "https://github.com/vardius/peer-data-server#readme",
+  "jest": {
+    "testRegex": "(/test/.*\\.spec.js)$"
+  },
+  "engines": {
+    "node": ">=5"
   },
   "keywords": [
     "PeerDataServer",
@@ -42,36 +52,18 @@
     "socket.io",
     "server"
   ],
-  "author": {
-    "name": "Rafał Lorenz",
-    "email": "vardius@gmail.com"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vardius/peer-data-server/issues"
-  },
-  "homepage": "https://github.com/vardius/peer-data-server#readme",
   "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.3.15",
     "babel-core": "^6.3.15",
     "babel-eslint": "^7.0.0",
     "babel-jest": "^20.0.3",
-    "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.5.1",
     "eslint": "^4.0.0",
     "jest": "^20.0.4",
     "jest-cli": "^20.0.4",
     "peer-data": "^3.0.13",
     "rimraf": "^2.3.4",
-    "rollup": "^0.43.0",
-    "rollup-plugin-babel": "^2.7.1",
-    "rollup-plugin-commonjs": "^8.0.2",
-    "rollup-plugin-json": "^2.3.0",
-    "rollup-plugin-node-builtins": "^2.1.2",
-    "rollup-plugin-node-globals": "^1.1.0",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-plugin-sourcemaps": "^0.4.2",
     "socket.io": "^2.0.3"
   }
 }
