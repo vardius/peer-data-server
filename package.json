@@ -1,6 +1,6 @@
 {
   "name": "peer-data-server",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "PeerDataServer - socket signaling server for PeerData library",
   "scripts": {
     "clean": "rimraf lib coverage",
