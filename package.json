@@ -62,7 +62,7 @@
     "eslint": "^4.2.0",
     "jest": "^20.0.4",
     "jest-cli": "^20.0.4",
-    "peer-data": "^3.0.18",
+    "peer-data": "^3.0.21",
     "rimraf": "^2.3.4",
     "socket.io": "^2.0.3"
   }

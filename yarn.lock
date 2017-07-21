@@ -2512,11 +2512,11 @@ path-type@^1.0.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
-peer-data@^3.0.18:
-  version "3.0.18"
-  resolved "https://registry.yarnpkg.com/peer-data/-/peer-data-3.0.18.tgz#3b4d9a46958249af2b2c15301bfa8feddd0f7744"
+peer-data@^3.0.21:
+  version "3.0.21"
+  resolved "https://registry.yarnpkg.com/peer-data/-/peer-data-3.0.21.tgz#f22f8432fa5756b0687b6ac2dee4b87a4d963d4b"
   dependencies:
-    webrtc-adapter "^4.1.1"
+    webrtc-adapter "^4.2.1"
 
 performance-now@^0.2.0:
   version "0.2.0"
@@ -3196,9 +3196,9 @@ webidl-conversions@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-4.0.1.tgz#8015a17ab83e7e1b311638486ace81da6ce206a0"
 
-webrtc-adapter@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/webrtc-adapter/-/webrtc-adapter-4.1.1.tgz#bb815b6430b9c36dac9c3756d0c9ce438b34e336"
+webrtc-adapter@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/webrtc-adapter/-/webrtc-adapter-4.2.1.tgz#863894d43ffe82c985c6795d63213f7b707ce751"
   dependencies:
     sdp "^2.1.0"
 
