@@ -2,9 +2,9 @@ import os from "os";
 import * as SocketIO from "socket.io";
 import { SignalingEventType } from "peer-data";
 
-export default function PeerDataServer(server) {
+export default function PeerDataServer(server, callback) {
   const io = SocketIO.listen(server);
-  io.on("connection", function(socket) {
+  io.on("connection", function (socket) {
     function log() {
       socket.emit("log", ...arguments);
     }
@@ -17,7 +17,7 @@ export default function PeerDataServer(server) {
       socket.leave(id);
     }
 
-    socket.on("message", function(event) {
+    socket.on("message", function (event) {
       event.caller = {
         id: socket.id
       };
@@ -39,14 +39,18 @@ export default function PeerDataServer(server) {
           socket.broadcast.to(event.callee.id).emit("message", event);
           break;
         default:
-          socket.broadcast.to(event.room.id).emit("message", event);
+          if (callback) {
+            callback(socket, event);
+          } else {
+            socket.broadcast.to(event.room.id).emit("message", event);
+          }
       }
     });
 
-    socket.on("ipaddr", function() {
+    socket.on("ipaddr", function () {
       var ifaces = os.networkInterfaces();
       for (var dev in ifaces) {
-        ifaces[dev].forEach(function(details) {
+        ifaces[dev].forEach(function (details) {
           if (details.family === "IPv4" && details.address !== "127.0.0.1") {
             socket.emit("ipaddr", details.address);
           }
@@ -54,7 +58,7 @@ export default function PeerDataServer(server) {
       }
     });
 
-    socket.on("disconnect", function() {
+    socket.on("disconnect", function () {
       socket.broadcast.emit({
         type: SignalingEventType.DISCONNECT,
         caller: { id: socket.id },
